@@ -12,6 +12,14 @@ This is a [Next.js](https://nextjs.org/) project for building Nextjs messenger c
 - [react-icons](https://react-icons.github.io/react-icons/) - npm install react-icons
 - [react-hook-form](https://react-hook-form.com/) - npm install react-hook-form
 - [clsx](https://www.npmjs.com/package/clsx) - npm install clsx
+- [prisma](https://www.prisma.io/) - npm install prisma
+  `npx prisma init`
+  `npx prisma db push`
+- [@prisma/client](https://www.npmjs.com/package/@prisma/client) - npm install @prisma/client
+- [bcrypt](https://www.npmjs.com/package/bcrypt) - npm install bcrypt
+- [@types/bcrypt](https://www.npmjs.com/package/@types/bcrypt) - npm install -D @types/bcrypt
+- [next-auth](https://next-auth.js.org/) - npm install next-auth
+- [@next-auth/prisma-adapter](https://www.npmjs.com/package/@next-auth/prisma-adapter) - npm install @next-auth/prisma-adapter
 
 ## Learn More
 
