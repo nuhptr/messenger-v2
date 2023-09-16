@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
 import './globals.css'
+import ToasterContext from './context/toaster-context'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -31,6 +32,7 @@ export default function RootLayout({ children }: LayoutProps) {
   return (
     <html lang='en'>
       <body className={inter.className} suppressHydrationWarning={true}>
+        <ToasterContext /> {/* Add toast context to use in global present */}
         {children}
       </body>
     </html>
