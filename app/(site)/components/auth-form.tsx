@@ -3,6 +3,7 @@
 import { useCallback, useState } from 'react'
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form'
 import { BsGithub, BsGoogle } from 'react-icons/bs'
+import axios from 'axios'
 
 import Input from '@/app/components/inputs/input'
 import Button from '@/app/components/button'
@@ -36,6 +37,7 @@ const AuthForm = () => {
 
     if (variant === 'REGISTER') {
       // Axios Register
+      axios.post('/api/register', data)
     }
 
     if (variant === 'LOGIN') {
