@@ -6,7 +6,7 @@ This is a [Next.js](https://nextjs.org/) project for building Nextjs messenger c
 
 ## Dependencies
 
-- [Tailwind CSS](https://tailwindcss.com/) - npm install tailwindcss
+- [tailwindcss](https://tailwindcss.com/) - npm install tailwindcss
 - [@tailwindcss/forms](https://www.npmjs.com/package/@tailwindcss/forms) - npm install @tailwindcss/forms
   `require('@tailwindcss/forms')({ strategy: 'class' }),`
 - [react-icons](https://react-icons.github.io/react-icons/) - npm install react-icons
