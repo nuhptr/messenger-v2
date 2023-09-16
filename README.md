@@ -20,6 +20,8 @@ This is a [Next.js](https://nextjs.org/) project for building Nextjs messenger c
 - [@types/bcrypt](https://www.npmjs.com/package/@types/bcrypt) - npm install -D @types/bcrypt
 - [next-auth](https://next-auth.js.org/) - npm install next-auth
 - [@next-auth/prisma-adapter](https://www.npmjs.com/package/@next-auth/prisma-adapter) - npm install @next-auth/prisma-adapter
+- [axios](https://axios-http.com/docs/intro) - npm install axios
+- [react-hot-toast](https://react-hot-toast.com/docs) - npm install react-hot-toast
 
 ## Learn More
 
