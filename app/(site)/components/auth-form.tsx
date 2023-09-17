@@ -1,19 +1,33 @@
 'use client'
 
-import { useCallback, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form'
 import { BsGithub, BsGoogle } from 'react-icons/bs'
 import axios from 'axios'
+import toast from 'react-hot-toast'
+import { signIn, useSession } from 'next-auth/react'
+import { useRouter } from 'next/navigation'
 
-import Input from '@/app/components/inputs/input'
+import Input from '@/app/components/input'
 import Button from '@/app/components/button'
 import AuthSocialButton from './auth-social-button'
 
 type Variant = 'LOGIN' | 'REGISTER'
 
 const AuthForm = () => {
+  // call useSession() hook to get session details
+  const session = useSession()
+  // call useRouter() hook to get router details
+  const router = useRouter()
+
   const [variant, setVariant] = useState<Variant>('LOGIN')
   const [isLoading, setIsLoading] = useState<boolean>(false)
+
+  useEffect(() => {
+    if (session?.status === 'authenticated') {
+      router.push('/users')
+    }
+  }, [session?.status, router])
 
   const toggleVariant = useCallback(() => {
     if (variant === 'LOGIN') setVariant('REGISTER')
@@ -37,11 +51,24 @@ const AuthForm = () => {
 
     if (variant === 'REGISTER') {
       // Axios Register
-      axios.post('/api/register', data)
+      axios
+        .post('/api/register', data)
+        .then(() => signIn('credentials', data))
+        .catch(() => toast.error('Something went wrong!'))
+        .finally(() => setIsLoading(false))
     }
 
     if (variant === 'LOGIN') {
       // NextAuth Signin
+      signIn('credentials', { ...data, redirect: false })
+        .then((callback) => {
+          if (callback?.error) toast.error('Invalid credentials!')
+          if (callback?.ok && !callback?.error) {
+            toast.success('Logged in!')
+            router.push('/users')
+          }
+        })
+        .finally(() => setIsLoading(false))
     }
   }
 
@@ -49,6 +76,12 @@ const AuthForm = () => {
     setIsLoading(true)
 
     // NextAuth Social Signin
+    signIn(action, { redirect: false })
+      .then((callback) => {
+        if (callback?.error) toast.error('Something went wrong!')
+        if (callback?.ok && !callback?.error) toast.success('Logged in!')
+      })
+      .finally(() => setIsLoading(false))
   }
 
   return (
@@ -98,6 +131,7 @@ const AuthForm = () => {
             </div>
           </div>
 
+          {/* Social Action */}
           <div className='mt-6 flex gap-2'>
             <AuthSocialButton icon={BsGithub} onClick={() => socialAction('github')} />
             <AuthSocialButton icon={BsGoogle} onClick={() => socialAction('google')} />
