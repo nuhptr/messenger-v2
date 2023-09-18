@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 
-import useRoutes from '@/app/hooks/useRoutes'
+import useRoutes from '@/app/hooks/use-routes'
 import DesktopItem from './desktop-item'
 
 export default function DesktopSidebar() {
