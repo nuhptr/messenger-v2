@@ -24,9 +24,7 @@ export default function AuthForm() {
   const [isLoading, setIsLoading] = useState<boolean>(false)
 
   useEffect(() => {
-    if (session?.status === 'authenticated') {
-      router.push('/users')
-    }
+    if (session?.status === 'authenticated') router.push('/users')
   }, [session?.status, router])
 
   const toggleVariant = useCallback(() => {
@@ -39,11 +37,7 @@ export default function AuthForm() {
     handleSubmit,
     formState: { errors },
   } = useForm<FieldValues>({
-    defaultValues: {
-      name: '',
-      email: '',
-      password: '',
-    },
+    defaultValues: { name: '', email: '', password: '' },
   })
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
