@@ -2,8 +2,6 @@
 
 import { Toaster } from 'react-hot-toast'
 
-const ToasterContext = () => {
+export default function ToasterContext() {
   return <Toaster />
 }
-
-export default ToasterContext
