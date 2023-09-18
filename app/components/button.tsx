@@ -12,7 +12,7 @@ interface ButtonProps {
   disabled?: boolean
 }
 
-const Button: React.FC<ButtonProps> = ({
+export default function Button({
   type,
   fullWidth,
   children,
@@ -20,7 +20,7 @@ const Button: React.FC<ButtonProps> = ({
   secondary,
   danger,
   disabled,
-}) => {
+}: ButtonProps) {
   return (
     <button
       onClick={onClick}
@@ -38,5 +38,3 @@ const Button: React.FC<ButtonProps> = ({
     </button>
   )
 }
-
-export default Button
