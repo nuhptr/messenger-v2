@@ -8,13 +8,13 @@ import toast from 'react-hot-toast'
 import { signIn, useSession } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
 
-import Input from '@/app/components/input'
+import Input from '@/app/components/inputs/input'
 import Button from '@/app/components/button'
 import AuthSocialButton from './auth-social-button'
 
 type Variant = 'LOGIN' | 'REGISTER'
 
-const AuthForm = () => {
+export default function AuthForm() {
   // call useSession() hook to get session details
   const session = useSession()
   // call useRouter() hook to get router details
@@ -148,5 +148,3 @@ const AuthForm = () => {
     </div>
   )
 }
-
-export default AuthForm
