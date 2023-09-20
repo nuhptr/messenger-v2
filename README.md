@@ -6,22 +6,42 @@ This is a [Next.js](https://nextjs.org/) project for building Nextjs messenger c
 
 ## Dependencies
 
-- [tailwindcss](https://tailwindcss.com/) - npm install tailwindcss
-- [@tailwindcss/forms](https://www.npmjs.com/package/@tailwindcss/forms) - npm install @tailwindcss/forms
+- [tailwindcss](https://tailwindcss.com/) - npm install tailwindcss (style)
+- [@tailwindcss/forms](https://www.npmjs.com/package/@tailwindcss/forms) - npm install @tailwindcss/forms (style plugin for forms)
   `require('@tailwindcss/forms')({ strategy: 'class' }),`
-- [react-icons](https://react-icons.github.io/react-icons/) - npm install react-icons
-- [react-hook-form](https://react-hook-form.com/) - npm install react-hook-form
-- [clsx](https://www.npmjs.com/package/clsx) - npm install clsx
-- [prisma](https://www.prisma.io/) - npm install prisma
+- [react-icons](https://react-icons.github.io/react-icons/) - npm install react-icons (icons)
+- [react-hook-form](https://react-hook-form.com/) - npm install react-hook-form (hook form)
+- [clsx](https://www.npmjs.com/package/clsx) - npm install clsx (adding logic className)
+- [prisma](https://www.prisma.io/) - npm install prisma (ORM)
   `npx prisma init`
   `npx prisma db push`
-- [@prisma/client](https://www.npmjs.com/package/@prisma/client) - npm install @prisma/client
-- [bcrypt](https://www.npmjs.com/package/bcrypt) - npm install bcrypt
+- [@prisma/client](https://www.npmjs.com/package/@prisma/client) - npm install @prisma/client (ORM for client)
+- [bcrypt](https://www.npmjs.com/package/bcrypt) - npm install bcrypt (hashing password)
 - [@types/bcrypt](https://www.npmjs.com/package/@types/bcrypt) - npm install -D @types/bcrypt
-- [next-auth](https://next-auth.js.org/) - npm install next-auth
-- [@next-auth/prisma-adapter](https://www.npmjs.com/package/@next-auth/prisma-adapter) - npm install @next-auth/prisma-adapter
-- [axios](https://axios-http.com/docs/intro) - npm install axios
-- [react-hot-toast](https://react-hot-toast.com/docs) - npm install react-hot-toast
+- [next-auth](https://next-auth.js.org/) - npm install next-auth (authentication)
+- [@next-auth/prisma-adapter](https://www.npmjs.com/package/@next-auth/prisma-adapter) - npm install @next-auth/prisma-adapter (adapter prisma for authentication)
+- [axios](https://axios-http.com/docs/intro) - npm install axios (call api)
+- [react-hot-toast](https://react-hot-toast.com/docs) - npm install react-hot-toast (for notifications)
+- [next-superjson-plugin](https://www.npmjs.com/package/next-superjson-plugin) - npm install next-superjson-plugin (Automatically transform your Next.js Pages to use SuperJSON with SWC)
+
+## Config for next.config.js
+
+```javascript
+const nextConfig = {
+  experimental: {
+    appDir: true,
+    swcPlugins: [['next-superjson-plugin', {}]],
+  },
+}
+```
+
+## Domain Image for github and google
+
+```javascript
+images: {
+  domains: ['lh3.googleusercontent.com', 'res.cloudinary.com', 'avatars.githubusercontent.com'],
+}
+```
 
 ## Learn More
 
@@ -35,3 +55,7 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 ## Deploy on Vercel
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+```
+
+```
