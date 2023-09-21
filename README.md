@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org/) project for building Nextjs messenger clone app. It uses [Tailwind CSS](https://tailwindcss.com/) for styling. It also uses [TypeScript](https://www.typescriptlang.org/) for type checking.
+# Messenger Clone with NEXT13 , Tailwind, Next, Prisma, Mongo, NextAuth, Pusher & Vercel
 
 ## Create Next App
 
@@ -55,7 +55,3 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 ## Deploy on Vercel
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-
-```
-
-```
