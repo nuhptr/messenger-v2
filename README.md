@@ -1,47 +1,24 @@
-# Messenger Clone with NEXT13 , Tailwind, Next, Prisma, Mongo, NextAuth, Pusher & Vercel
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Create Next App
+## Getting Started
 
-`npx create-next-app ./ --typescript --tailwind`
+First, run the development server:
 
-## Dependencies
-
-- [tailwindcss](https://tailwindcss.com/) - npm install tailwindcss (style)
-- [@tailwindcss/forms](https://www.npmjs.com/package/@tailwindcss/forms) - npm install @tailwindcss/forms (style plugin for forms)
-  `require('@tailwindcss/forms')({ strategy: 'class' }),`
-- [react-icons](https://react-icons.github.io/react-icons/) - npm install react-icons (icons)
-- [react-hook-form](https://react-hook-form.com/) - npm install react-hook-form (hook form)
-- [clsx](https://www.npmjs.com/package/clsx) - npm install clsx (adding logic className)
-- [prisma](https://www.prisma.io/) - npm install prisma (ORM)
-  `npx prisma init`
-  `npx prisma db push`
-- [@prisma/client](https://www.npmjs.com/package/@prisma/client) - npm install @prisma/client (ORM for client)
-- [bcrypt](https://www.npmjs.com/package/bcrypt) - npm install bcrypt (hashing password)
-- [@types/bcrypt](https://www.npmjs.com/package/@types/bcrypt) - npm install -D @types/bcrypt
-- [next-auth](https://next-auth.js.org/) - npm install next-auth (authentication)
-- [@next-auth/prisma-adapter](https://www.npmjs.com/package/@next-auth/prisma-adapter) - npm install @next-auth/prisma-adapter (adapter prisma for authentication)
-- [axios](https://axios-http.com/docs/intro) - npm install axios (call api)
-- [react-hot-toast](https://react-hot-toast.com/docs) - npm install react-hot-toast (for notifications)
-- [next-superjson-plugin](https://www.npmjs.com/package/next-superjson-plugin) - npm install next-superjson-plugin (Automatically transform your Next.js Pages to use SuperJSON with SWC)
-
-## Config for next.config.js
-
-```javascript
-const nextConfig = {
-  experimental: {
-    appDir: true,
-    swcPlugins: [['next-superjson-plugin', {}]],
-  },
-}
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-## Domain Image for github and google
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-```javascript
-images: {
-  domains: ['lh3.googleusercontent.com', 'res.cloudinary.com', 'avatars.githubusercontent.com'],
-}
-```
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
 ## Learn More
 
@@ -53,5 +30,7 @@ To learn more about Next.js, take a look at the following resources:
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
 ## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
